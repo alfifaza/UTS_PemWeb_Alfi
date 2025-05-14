@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Deal PLTU di Kaltim</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #121212;
+      color: #f5f5f5;
+      padding-top: 70px;
+    }
+    header {
+      padding: 10px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 10;
+      background-color: #ffc107;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    .logo img {
+      height: 40px;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #ffc107;
+    }
+    .search-container {
+      position: relative;
+    }
+    .search-icon {
+      font-size: 1.3rem;
+      color: #fff;
+      cursor: pointer;
+      margin-left: 20px;
+      transition: color 0.3s ease;
+    }
+    .search-icon:hover {
+      color: #ffc107;
+    }
+    .search-input {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      margin-top: 5px;
+      background-color: #333;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      display: none;
+      color: #fff;
+    }
+    .search-input:focus {
+      outline: none;
+    }
+
+    /* Updated full-frame header image */
+    .news-header {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .news-header img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+    .news-header h1 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #fff;
+      font-size: 2.5rem;
+      font-weight: 700;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 10px 20px;
+      border-radius: 10px;
+    }
+
+    .news-content {
+      padding: 3rem 1rem;
+      background-color: #1f1f1f;
+    }
+    .news-article {
+      background-color: #2c2c2c;
+      border-radius: 10px;
+      padding: 2rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    .news-article h2 {
+      color: #ffc107;
+      font-size: 2rem;
+      font-weight: 700;
+    }
+    .news-article p {
+      color: #ccc;
+      font-size: 1rem;
+      margin-top: 1rem;
+    }
+    .news-article i {
+      color: #ffc107;
+    }
+
+    .back-link {
+      color: #ffc107;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 2rem;
+      display: inline-block;
+    }
+
+    /* Footer Styles */
+    .footer {
+      background-color: #e0a800;
+      color: #f5f5f5;
+      padding: 40px 0;
+      transition: background-color 0.5s ease;
+      text-align: center;
+    }
+    .footer-content {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+    .logo img {
+      width: 90px;
+      transition: transform 0.3s ease;
+    }
+    .logo-img {
+      cursor: pointer;
+    }
+    .logo-img:hover {
+      transform: scale(1.1);
+    }
+    .contact-info {
+      text-align: left;
+      max-width: 300px;
+    }
+    .contact-title {
+      font-size: 1.5rem;
+      color: #fff;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .contact-details {
+      font-size: 1rem;
+      color: #ddd;
+    }
+    .contact-details a {
+      color: #fff;
+      text-decoration: none;
+    }
+    .social-media p {
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+      color: #333;
+    }
+    .social-media a {
+      font-size: 1.5rem;
+      color: #fff;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      margin-top: 5px;
+      transition: color 0.3s ease;
+    }
+    .social-icon {
+      margin-right: 8px;
+    }
+    .social-media a:hover {
+      color: #333;
+    }
+    .footer-bottom {
+      background-color: #222;
+      padding: 10px;
+      font-size: 0.9rem;
+      color: #bbb;
+    }
+    .footer.scrolled {
+      background-color: #1f1f1f;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="PLN Logo">
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="news.html">News</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a> 
+    </nav>
+    <div class="search-container">
+      <i class="bi bi-search search-icon" onclick="toggleSearch()"></i>
+      <input type="text" class="search-input" id="searchInput" placeholder="Search...">
+    </div>
+  </header>
+
+  <!-- News Header -->
+  <section class="news-header">
+    <img src="news1.jpg" alt="Header News">
+  </section>
+
+  <!-- News Content -->
+<section class="news-content container">
+  <div class="news-article">
+    <h2>Pasokan Batubara dari Cucu Usaha PLN Siap Mendukung Pembangkit di Kalimantan Timur</h2>
+    <p style="display: flex; align-items: center; gap: 15px; flex-wrap: wrap; font-size: 14px;">
+      <span><i class="fas fa-newspaper"></i> <strong>Berita PLN Batubara Niaga</strong></span>
+      <span><i class="fas fa-calendar-alt"></i> 09 May 2023</span>
+      <span><i class="fas fa-user"></i> Super Admin</span>
+      <span><i class="fas fa-eye"></i> 624 Views</span>
+    </p>  
+
+    <p><em>Detik.com, Jakarta</em> - PT PLN Batubara Niaga menandatangani perjanjian kontrak batu bara dengan PT Cahaya Fajar Kaltim dan PT Indonesia Energi Dinamika pada Selasa, 9 Mei 2023. Kerja sama ini dilakukan untuk memenuhi pasokan batu bara di PLTU IPP Embalut/Embalut Expansion dan PLTU Kaltim 4.</p>
+    <p>Penandatanganan kerja sama jual beli ini dilakukan oleh Kanapi Subur Dwiyanto selaku Direktur Utama PLN Batubara Niaga dan Daniel Mahendra selaku Direktur Utama PT Cahaya Fajar Kaltim dan PT Indonesia Energi Dinamika. Acara ini juga disaksikan oleh pemilik PT CFK dan PT Indoeka Tirto Sulun serta Direktur Utama PLN Energi Primer Indonesia, Iwan Agung Firstantara.</p>
+    <p>PLN Batubara Niaga adalah anak usaha dari PT PLN Batubara, yang merupakan anak usaha dari PLN. Dalam perjanjian tersebut, Kanapi Subur Dwiyanto menegaskan komitmen PLN Batubara Niaga untuk memenuhi kebutuhan batu bara bagi seluruh PLTU di Indonesia.</p>
+    <p>Untuk PLTU IPP Embalut/Embalut Expansion, PLN Batubara Niaga akan menyediakan sebanyak 720 ribu MT, sedangkan untuk PLTU Kaltim 4 akan disediakan 1.150.000 MT batu bara.</p>
+    <p>Direktur Utama PLN Energi Primer Indonesia, Iwan Agung Firstantara, menyampaikan bahwa batu bara adalah salah satu inti dari bisnis EPI selain gas, BBM, dan biomassa. Ia menyatakan bahwa kerja sama ini tidak hanya untuk kepentingan bisnis semata, tetapi juga dalam rangka mendukung pemenuhan kebutuhan energi listrik masyarakat. Batu bara masih menjadi bahan baku termurah dalam produksi listrik dan berpengaruh terhadap tarif serta subsidi pemerintah.</p>
+    <p>"Meskipun demikian, spesifikasi batu bara harus sesuai dengan Coal Offtake Agreement (COA)," ujar Iwan Agung.</p>
+    <p>Volume pengiriman akan mencakup pasokan ke PLTU IPP Embalut Unit 1 & 2 berkapasitas 2 x 30 MW serta ekspansi 1 x 60 MW. Untuk PLTU IPP Kaltim 4, kapasitasnya mencapai 2 x 110 MW, sehingga total kapasitas kedua pembangkit sebesar 220 MW.</p>
+    <p>Pengiriman batu bara akan dilakukan secara bertahap dengan volume 110.000 MT per bulan, total sekitar 1,1 juta MT per tahun. Batu bara yang disuplai memiliki kualitas kalori dengan standar CGV (kCal/Kg AR) sebesar 3800 - 4200 kCal/Kg.</p>
+    <p>Rencananya, pengiriman pertama akan segera dilakukan sesuai dengan jadwal yang telah disepakati.</p>
+    <a href="news.html" class="back-link">Kembali ke Berita Terkini</a>
+  </div>
+</section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="logo">
+        <img src="logo.png" alt="PLN Logo" class="logo-img">
+      </div>
+      <div class="contact-info">
+        <p class="contact-title">Kontak Kami</p>
+        <p class="contact-details">
+          <span>Email: <a href="mailto:kontak@plnbatubaraniaga.co.id">kontak@plnbatubaraniaga.co.id</a></span><br>
+          <span>Telp: <a href="tel:+622126963955">(021) 26963955</a></span><br>
+          <span>Alamat: Jl. Buncit Raya No.10, Kalibata, Pancoran, Jakarta Selatan, DKI Jakarta, 12740</span>
+        </p>
+      </div>
+      <div class="social-media">
+        <p>Follow Us:</p>
+        <a href="https://www.instagram.com/plnbatubaraniaga/" target="_blank">
+          <i class="bi bi-instagram social-icon"></i> Instagram
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 PT PLN Batubara Niaga. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    function toggleSearch() {
+      const searchInput = document.getElementById('searchInput');
+      searchInput.style.display = searchInput.style.display === 'block' ? 'none' : 'block';
+      if (searchInput.style.display === 'block') {
+        searchInput.focus();
+      }
+    }
+
+    // Scroll effect for footer
+    let lastScrollTop = 0;
+    const footer = document.querySelector('.footer');
+    window.onscroll = function() {
+      let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      if (scrollTop > lastScrollTop) {
+        footer.classList.add('scrolled');
+      } else {
+        footer.classList.remove('scrolled');
+      }
+      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>News PT PLN Batubara Niaga</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #121212;
+      color: #f5f5f5;
+      padding-top: 70px;
+    }
+    header {
+      padding: 10px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 10;
+      background-color: #ffc107;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    .logo img {
+      height: 40px;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #ffc107;
+    }
+    .search-container {
+      position: relative;
+    }
+    .search-icon {
+      font-size: 1.3rem;
+      color: #fff;
+      cursor: pointer;
+      margin-left: 20px;
+      transition: color 0.3s ease;
+    }
+    .search-icon:hover {
+      color: #ffc107;
+    }
+    .search-input {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      margin-top: 5px;
+      background-color: #333;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      display: none;
+      color: #fff;
+    }
+    .search-input:focus {
+      outline: none;
+    }
+
+    .news-header {
+      background-image: url('layanan4.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 35vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+    .news-header::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+    .news-header h1 {
+      position: relative;
+      z-index: 2;
+      color: #fff;
+      font-size: 2.2rem;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .news-section {
+      padding: 3rem 1rem;
+      background-color: #1f1f1f;
+    }
+
+    .news-carousel {
+      display: flex;
+      overflow-x: auto;
+      gap: 1rem;
+      padding-bottom: 1rem;
+      scrollbar-width: thin;
+    }
+
+    .news-card {
+      flex: 0 0 auto;
+      width: 320px;
+      background-color: #2c2c2c;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+
+    .news-card:hover {
+      transform: scale(1.03);
+    }
+
+    .news-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .news-card .card-body {
+      padding: 1rem;
+    }
+
+    .news-card .card-title {
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #ffc107;
+    }
+
+    .news-card .card-text {
+      font-size: 0.95rem;
+      color: #ccc;
+      margin-top: 0.5rem;
+    }
+
+    .news-card a {
+      color: #ffc107;
+      font-weight: bold;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="PLN Logo">
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="news.html">News</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a> 
+    </nav>
+    <div class="search-container">
+      <i class="bi bi-search search-icon" onclick="toggleSearch()"></i>
+      <input type="text" class="search-input" id="searchInput" placeholder="Search...">
+    </div>
+  </header>
+
+  <!-- News Header -->
+  <section class="news-header">
+    <h1>Berita Terkini</h1>
+  </section>
+
+  <!-- News Section -->
+  <section class="news-section container">
+    <div class="news-carousel">
+
+      <!-- News 1 -->
+      <div class="news-card">
+        <img src="news1.jpg" alt="Berita 1">
+        <div class="card-body">
+          <h5 class="card-title">Deal PLTU di Kaltim</h5>
+          <p class="card-text">Pasokan batubara dari cucu usaha PLN siap mendukung pembangkit di Kalimantan Timur.</p>
+          <a href="newss1.html">Baca Selengkapnya</a>
+        </div>
+      </div>
+
+      <!-- News 2 -->
+      <div class="news-card">
+        <img src="news2.jpg" alt="Berita 2">
+        <div class="card-body">
+          <h5 class="card-title">PLNBBN Sambut Idul Fitri</h5>
+          <p class="card-text">Rayakan Idul Fitri 1446 H dengan komitmen nol gratifikasi demi integritas.</p>
+          <a href="newss2.html">Baca Selengkapnya</a>
+        </div>
+      </div>
+
+      <!-- News 3 -->
+      <div class="news-card">
+        <img src="news3.jpg" alt="Berita 3">
+        <div class="card-body">
+          <h5 class="card-title">CSR di Bulan Ramadhan</h5>
+          <p class="card-text">Berbagi kebahagiaan dan bantuan selama Ramadhan kepada masyarakat sekitar.</p>
+          <a href="newss3.html">Baca Selengkapnya</a>
+        </div>
+      </div>
+
+      <!-- News 4 -->
+      <div class="news-card">
+        <img src="news4.jpg" alt="Berita 4">
+        <div class="card-body">
+          <h5 class="card-title">Hewan Kurban Idul Adha</h5>
+          <p class="card-text">Penyerahan simbolis hewan kurban tahun 2024 oleh PLN Batubara Niaga.</p>
+          <a href="newss4.html">Baca Selengkapnya</a>
+        </div>
+      </div>
+
+      <!-- News 5 -->
+      <div class="news-card">
+        <img src="news5.jpg" alt="Berita 5">
+        <div class="card-body">
+          <h5 class="card-title">Penghargaan Energi 2024</h5>
+          <p class="card-text">PLN Batubara Niaga raih penghargaan sebagai pemasok energi primer paling inovatif.</p>
+          <a href="newss5.html">Baca Selengkapnya</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <script>
+    function toggleSearch() {
+      const searchInput = document.getElementById('searchInput');
+      searchInput.style.display = searchInput.style.display === 'block' ? 'none' : 'block';
+      if (searchInput.style.display === 'block') {
+        searchInput.focus();
+      }
+    }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+<footer class="footer">
+  <div class="footer-content">
+    <div class="logo">
+      <img src="logo.png" alt="PLN Logo" class="logo-img">
+    </div>
+    <div class="contact-info">
+      <p class="contact-title">Kontak Kami</p>
+      <p class="contact-details">
+        <span>Email: <a href="mailto:kontak@plnbatubaraniaga.co.id">kontak@plnbatubaraniaga.co.id</a></span><br>
+        <span>Telp: <a href="tel:+622126963955">(021) 26963955</a></span><br>
+        <span>Alamat: Jl. Buncit Raya No.10, Kalibata, Pancoran, Jakarta Selatan, DKI Jakarta, 12740</span>
+      </p>
+    </div>
+    <div class="social-media">
+      <p>Follow Us:</p>
+      <a href="https://www.instagram.com/plnbatubaraniaga/" target="_blank">
+        <i class="bi bi-instagram social-icon"></i> Instagram
+      </a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 PT PLN Batubara Niaga. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background-color: #e0a800;
+    color: #f5f5f5;
+    padding: 40px 0;
+    transition: background-color 0.5s ease;
+    position: relative;
+    text-align: center;
+  }
+
+  .footer-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+  }
+
+  .logo img {
+    width: 90px;
+    transition: transform 0.3s ease;
+  }
+
+  .logo-img {
+    cursor: pointer;
+  }
+
+  .logo-img:hover {
+    transform: scale(1.1);
+  }
+
+  .contact-info {
+    text-align: left;
+    max-width: 300px;
+  }
+
+  .contact-title {
+    font-size: 1.5rem;
+    color: #fff;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .contact-details {
+    font-size: 1rem;
+    color: #ddd;
+  }
+
+  .contact-details a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .social-media p {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: #333;
+  }
+
+  .social-media a {
+    font-size: 1.5rem;
+    color: #fff;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    margin-top: 5px;
+    transition: color 0.3s ease;
+  }
+
+  .social-icon {
+    margin-right: 8px;
+  }
+
+  .social-media a:hover {
+    color: #333;
+  }
+
+  .footer-bottom {
+    background-color: #222;
+    padding: 10px;
+    font-size: 0.9rem;
+    color: #bbb;
+  }
+
+  .footer.scrolled {
+    background-color: #1f1f1f;
+  }
+</style>
+
+<script>
+  // Scroll effect for the footer background color change
+  let lastScrollTop = 0;
+  const footer = document.querySelector('.footer');
+
+  window.onscroll = function() {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    if (scrollTop > lastScrollTop) {
+      footer.classList.add('scrolled');
+    } else {
+      footer.classList.remove('scrolled');
+    }
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+  };
+</script>
+
+</html>

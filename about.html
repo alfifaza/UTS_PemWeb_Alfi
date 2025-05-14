@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us PT PLN Batubara Niaga</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #121212;
+      color: #f5f5f5;
+      padding-top: 70px;
+    }
+    header {
+      padding: 10px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 10;
+      background-color: #ffc107;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    .logo img {
+      height: 40px;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #333;
+    }
+    .search-container {
+      position: relative;
+    }
+    .search-icon {
+      font-size: 1.3rem;
+      color: #fff;
+      cursor: pointer;
+      margin-left: 20px;
+      transition: color 0.3s ease;
+    }
+    .search-icon:hover {
+      color: #333;
+    }
+    .search-input {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      margin-top: 5px;
+      background-color: #333;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      display: none;
+      color: #fff;
+    }
+    .search-input:focus {
+      outline: none;
+    }
+    .about-header {
+      background-image: url('gal1.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 35vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+    .about-header::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+    .about-header h1 {
+      position: relative;
+      z-index: 2;
+      color: #fff;
+      font-size: 2.2rem;
+      font-weight: 700;
+      text-align: center;
+    }
+    .about-section {
+      padding: 3rem 1rem;
+      background-color: #1f1f1f;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .about-section h2 {
+      color: #ffc107;
+      font-weight: bold;
+      margin-top: 2rem;
+      cursor: pointer;
+      transition: color 0.3s ease;
+      display: flex;
+      align-items: center;
+    }
+    .about-section h2:hover {
+      color: #ffb300;
+    }
+    .about-section h2 i {
+      margin-right: 10px;
+    }
+    .about-section p {
+      margin-top: 1rem;
+      color: #ccc;
+      line-height: 1.7;
+      text-align: center;
+    }
+    .about-section ul {
+      color: #ccc;
+      margin-top: 1rem;
+    }
+    .about-section ul li {
+      margin-bottom: 0.5rem;
+    }
+    .collapse {
+      display: none;
+      padding-top: 1rem;
+      transition: all 0.5s ease;
+    }
+    .collapse.show {
+      display: block;
+      animation: fadeIn 0.5s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .text-warning {
+      color: #ffc107 !important;
+    }
+    .text-muted {
+      color: #aaa !important;
+    }
+
+    .about-section .col-md-4 img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin: auto;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+    .about-section .col-md-4 img:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="PLN Logo">
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="news.html">News</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">contact</a>
+    </nav>
+    <div class="search-container">
+      <i class="bi bi-search search-icon" onclick="toggleSearch()"></i>
+      <input type="text" class="search-input" id="searchInput" placeholder="Search...">
+    </div>
+  </header>
+
+  <!-- Header -->
+  <!-- Header -->
+  <section class="about-header">
+    <h1>Tentang Kami</h1>
+  </section>
+
+  <!-- Content -->
+  <section class="about-section container">
+
+    <h2 onclick="toggleVisibility('tentangPerusahaan')"><i class="bi bi-building"></i> Tentang Perusahaan</h2>
+    <div id="tentangPerusahaan" class="collapse">
+      <p>PT PLN Batubara Niaga merupakan Anak Perusahaan dari PT PLN Energi Primer Indonesia yang telah berkomitmen untuk menjamin security of supply pasokan batubara bagi PLTU PLN dan IPP serta industri non ketenagalistrikkan berdasarkan prinsip Good Corporate Governance.</p>
+      <p>PT PLN Batubara Niaga didirikan pada tanggal 2 Agustus 2019 dan telah memiliki Izin Usaha Pertambangan Operasi Produksi Khusus (IUP-OPK) Pengangkutan dan Penjualan Batubara, sehingga dapat melaksanakan proses penjualan batubara hingga proses pengangkutannya sampai ke tempat tujuan.</p>
+    </div>
+
+    <h2 onclick="toggleVisibility('produk')"><i class="bi bi-box"></i> Produk</h2>
+    <div id="produk" class="collapse">
+      <p><strong>Batubara Peringkat Rendah:</strong> Batubara dengan GAR ≤ 4200 kCal/kg</p>
+      <p><strong>Batubara Peringkat Menengah:</strong> Batubara dengan GAR ≥ 4200 kCal/kg - ≤ 5000 kCal/kg</p>
+      <p><strong>Batubara Peringkat Tinggi:</strong> Batubara dengan GAR ≥ 5000 kCal/kg</p>
+      <p><strong>Batubara Tujuan Khusus:</strong> Batubara dengan spesifikasi khusus.</p>
+    </div>
+
+    <h2 onclick="toggleVisibility('visiMisi')"><i class="bi bi-eye"></i> Visi, Misi & Moto</h2>
+    <div id="visiMisi" class="collapse">
+      <p><strong>Visi:</strong> Menjadi solusi penyediaan batubara yang terpercaya.</p>
+      <p><strong>Misi:</strong> Mengelola penyediaan batubara, beserta pendukungnya secara terintegrasi.</p>
+      <p><strong>Moto:</strong> "Total Solution For Energy Serving"</p>
+    </div>
+
+    <h2 onclick="toggleVisibility('nilai')"><i class="bi bi-star"></i> Tata Nilai AKHLAK</h2>
+    <div id="nilai" class="collapse">
+      <p><strong>AMANAH:</strong> Memegang teguh kepercayaan yang diberikan.</p>
+      <p><strong>KOMPETEN:</strong> Terus belajar dan mengembangkan kapabilitas.</p>
+      <p><strong>HARMONIS:</strong> Saling peduli dan menghargai perbedaan.</p>
+      <p><strong>LOYAL:</strong> Berdedikasi dan mengutamakan kepentingan Bangsa dan Negara.</p>
+      <p><strong>ADAPTIF:</strong> Terus berinovasi dan menghadapi perubahan.</p>
+      <p><strong>KOLABORATIF:</strong> Membangun kerjasama yang sinergis.</p>
+    </div>
+
+    <h2 onclick="toggleVisibility('inisiatif')"><i class="bi bi-lightbulb"></i> Inisiatif Strategis</h2>
+    <div id="inisiatif" class="collapse">
+      <ul>
+        <li>Implementasi program efisiensi operasional.</li>
+        <li>Peningkatan supply chain management.</li>
+        <li>Pengembangan sumber daya manusia yang unggul.</li>
+      </ul>
+    </div>
+
+    <h2 onclick="toggleVisibility('lingkunganBisnis')"><i class="bi bi-building"></i> Lingkungan Bisnis</h2>
+    <div id="lingkunganBisnis" class="collapse">
+      <img src="ling1.jpeg" alt="Lingkungan Bisnis" class="img-fluid">
+    </div>
+
+    <h2 onclick="toggleVisibility('komisaris')"><i class="bi bi-person"></i> Komisaris</h2>
+    <div id="komisaris" class="collapse">
+      <div class="row justify-content-center">
+        <div class="col-sm-6 col-md-4 text-center mb-4">
+          <img src="kom1.jpg" alt="Tri Joko Supriyatno" class="img-fluid mb-3">
+          <h5 class="text-light">Tri Joko Supriyatno</h5>
+          <p class="text-muted">PLT Dewan Komisaris</p>
+        </div>
+        <div class="col-sm-6 col-md-4 text-center mb-4">
+          <img src="kom2.jpg" alt="Noor Adi Baroto" class="img-fluid mb-3">
+          <h5 class="text-light">Noor Adi Baroto</h5>
+          <p class="text-muted">Komisaris Independen</p>
+        </div>
+      </div>
+    </div>
+
+    <h2 onclick="toggleVisibility('direksi')"><i class="bi bi-person-lines-fill"></i> Direksi</h2>
+    <div id="direksi" class="collapse">
+      <div class="row justify-content-center">
+        <div class="col-sm-6 col-md-4 text-center mb-4">
+          <img src="dir1.jpg" alt="Andri Kurniawan" class="img-fluid rounded-circle mb-3">
+          <h5 class="text-light">Andri Kurniawan</h5>
+          <p class="text-muted">Direktur Utama</p>
+        </div>
+        <div class="col-sm-6 col-md-4 text-center mb-4">
+          <img src="dir2.jpg" alt="Rudi Hartono" class="img-fluid rounded-circle mb-3">
+          <h5 class="text-light">Rudi Hartono</h5>
+          <p class="text-muted">Direktur Keuangan & Human Capital</p>
+        </div>
+        <div class="col-sm-6 col-md-4 text-center mb-4">
+          <img src="dir3.jpg" alt="Rahmat Dian Amir" class="img-fluid rounded-circle mb-3">
+          <h5 class="text-light">Rahmat Dian Amir</h5>
+          <p class="text-muted">PLT Direktur Niaga & Operasi</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function toggleVisibility(sectionId) {
+      const element = document.getElementById(sectionId);
+      element.classList.toggle('show');
+    }
+
+    function toggleSearch() {
+      const searchInput = document.getElementById("searchInput");
+      searchInput.style.display = searchInput.style.display === "none" || searchInput.style.display === "" ? "block" : "none";
+    }
+  </script>
+
+</body>
+
+<footer class="footer">
+  <div class="footer-content">
+    <div class="logo">
+      <img src="logo.png" alt="PLN Logo" class="logo-img">
+    </div>
+    <div class="contact-info">
+      <p class="contact-title">Kontak Kami</p>
+      <p class="contact-details">
+        <span>Email: <a href="mailto:kontak@plnbatubaraniaga.co.id">kontak@plnbatubaraniaga.co.id</a></span><br>
+        <span>Telp: <a href="tel:+622126963955">(021) 26963955</a></span><br>
+        <span>Alamat: Jl. Buncit Raya No.10, Kalibata, Pancoran, Jakarta Selatan, DKI Jakarta, 12740</span>
+      </p>
+    </div>
+    <div class="social-media">
+      <p>Follow Us:</p>
+      <a href="https://www.instagram.com/plnbatubaraniaga/" target="_blank">
+        <i class="bi bi-instagram social-icon"></i> Instagram
+      </a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 PT PLN Batubara Niaga. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background-color: #e0a800;
+    color: #f5f5f5;
+    padding: 40px 0;
+    transition: background-color 0.5s ease;
+    position: relative;
+    text-align: center;
+  }
+
+  .footer-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+  }
+
+  .logo img {
+    width: 90px;
+    transition: transform 0.3s ease;
+  }
+
+  .logo-img {
+    cursor: pointer;
+  }
+
+  .logo-img:hover {
+    transform: scale(1.1);
+  }
+
+  .contact-info {
+    text-align: left;
+    max-width: 300px;
+  }
+
+  .contact-title {
+    font-size: 1.5rem;
+    color: #fff;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .contact-details {
+    font-size: 1rem;
+    color: #ddd;
+  }
+
+  .contact-details a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .social-media p {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: #333;
+  }
+
+  .social-media a {
+    font-size: 1.5rem;
+    color: #fff;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    margin-top: 5px;
+    transition: color 0.3s ease;
+  }
+
+  .social-icon {
+    margin-right: 8px;
+  }
+
+  .social-media a:hover {
+    color: #333;
+  }
+
+  .footer-bottom {
+    background-color: #222;
+    padding: 10px;
+    font-size: 0.9rem;
+    color: #bbb;
+  }
+
+  .footer.scrolled {
+    background-color: #1f1f1f;
+  }
+</style>
+
+<script>
+  // Scroll effect for the footer background color change
+  let lastScrollTop = 0;
+  const footer = document.querySelector('.footer');
+
+  window.onscroll = function() {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    if (scrollTop > lastScrollTop) {
+      footer.classList.add('scrolled');
+    } else {
+      footer.classList.remove('scrolled');
+    }
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+  };
+</script>
+
+</html>
